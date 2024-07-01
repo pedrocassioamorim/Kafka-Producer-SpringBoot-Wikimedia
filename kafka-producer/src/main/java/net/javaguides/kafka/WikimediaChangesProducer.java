@@ -2,6 +2,7 @@ package net.javaguides.kafka;
 
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
+import net.javaguides.config.KafkaProducerTopicConfig;
 import net.javaguides.handler.WikimediaChangesHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ public class WikimediaChangesProducer {
     }
 
     public void sendMessage() throws Exception {
-        String topic = "wikimedia_recentchange";
+        String topic = KafkaProducerTopicConfig.topicName;
         // to read real time stream data from Wikimedia, we use event source
         EventHandler eventHandler = new WikimediaChangesHandler(kafkaTemplate, topic);
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";

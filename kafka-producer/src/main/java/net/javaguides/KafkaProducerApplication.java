@@ -21,4 +21,5 @@ public class KafkaProducerApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         wikimediaChangesProducer.sendMessage();
     }
+
 }

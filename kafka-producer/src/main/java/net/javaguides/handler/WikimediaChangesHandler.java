@@ -2,8 +2,10 @@ package net.javaguides.handler;
 
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.MessageEvent;
+import net.javaguides.config.KafkaProducerTopicConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 
 public class WikimediaChangesHandler implements EventHandler {
@@ -12,8 +14,7 @@ public class WikimediaChangesHandler implements EventHandler {
 
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    private String topic;
-
+    private String topic = KafkaProducerTopicConfig.topicName;
 
     public WikimediaChangesHandler(KafkaTemplate<String, String> kafkaTemplate, String topic) {
         this.kafkaTemplate = kafkaTemplate;

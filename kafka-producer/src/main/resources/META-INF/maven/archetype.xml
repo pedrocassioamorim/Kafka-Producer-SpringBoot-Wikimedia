@@ -1,5 +1,5 @@
 <archetype>
-  <id>kafka-producer-wikimedia</id>
+  <id>kafka-producer</id>
   <sources>
     <source>src/main/java/App.java</source>
   </sources>

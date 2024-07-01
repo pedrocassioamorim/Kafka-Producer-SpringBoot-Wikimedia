@@ -14,7 +14,7 @@
     <name>Wikimedia_Kafka_producer</name>
     <description>Wikimedia_Kafka_producer</description>
     <modules>
-        <module>kafka-producer-wikimedia</module>
+        <module>kafka-producer</module>
     </modules>
     <packaging>pom</packaging>
     <url/>
